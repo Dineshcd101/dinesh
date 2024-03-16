@@ -1,0 +1,275 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease;
+}
+
+#calculator {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+input, label {
+    margin: 10px 0;
+}
+
+input {
+    width: calc(33.3% - 10px);
+    padding: 10px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #ff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.subject-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subject-row input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.subject-inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#resetButton {
+    display: none;
+}
+
+#errorContainer,
+#modalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#errorContent,
+#modalContent {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: #ff0000; /* Red color for error messages */
+}
+
+#modalContent strong {
+    color: #4caf50; /* Green color for GPA */
+}
+
+/* Dark Mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+#calculator.dark-mode {
+    background-color: #444;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+#modeToggle {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider - the moving part */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+body.dark-mode input:checked + .slider:before {
+    background-color: #ccc;
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#modeLabel {
+    margin-left: 10px;
+}
+
+/* ... (existing styles) */
+
+/* ... (existing styles) */
+
+
+#aboutIcon {
+    position: fixed;
+    bottom: 70px; /* Adjust this value to your preference */
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure the icon appears above other elements */
+}
+
+#aboutPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    max-width: 400px;
+    background: #8a2be2; /* Purple color, you can adjust as needed */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+/* ... (existing styles) */
+
+
+#aboutPopup p {
+    margin: 10px 0;
+    text-align: left;
+    color: #fff; /* Text color in light mode */
+}
+
+#aboutPopup a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+#aboutPopup a:hover {
+    text-decoration: underline;
+}
+
+#aboutPopup button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#madeByText {
+    position: relative;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #00008B; /* Text color in light mode */
+}
+/* ... (existing styles) */
+
+input {
+    width: calc(33.33% - 10px);
+    padding: 10px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    background-color: #FF8C00; /* Dark Orange color */
+}
+
+/* ... (existing styles) */
+/* Light Mode styles */
+body.light-mode {
+    background: linear-gradient(90deg, #87CEEB, #98FB98); /* Light blue to light green */
+    color: #000; /* Set text color for light mode */
+}
+
+#calculator.light-mode {
+    background: linear-gradient(90deg, #87CEEB, #98FB98); /* Light blue to light green */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#homeIcon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Ensure the icon appears above other elements */
+    font-size: 32px;
+    color: #0066cc; /* Adjust color as needed */
+}
